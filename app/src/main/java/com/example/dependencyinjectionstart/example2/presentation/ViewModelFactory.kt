@@ -7,7 +7,6 @@ import com.example.dependencyinjectionstart.example2.di.ViewModelModel
 import javax.inject.Inject
 import javax.inject.Provider
 
-@ApplicationScope
 class ViewModelFactory @Inject constructor(
   private val viewModels: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
 ) : ViewModelProvider.Factory {
