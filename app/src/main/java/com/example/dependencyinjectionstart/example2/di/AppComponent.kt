@@ -7,7 +7,7 @@ import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
-@Singleton
+@ApplicationScope
 @Component(modules = [DomainModule::class, DataModule::class])
 interface AppComponent {
   fun getViewModel(): ExampleViewModel
