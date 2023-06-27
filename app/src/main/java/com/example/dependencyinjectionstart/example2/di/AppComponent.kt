@@ -9,14 +9,11 @@ import dagger.Component
 interface AppComponent {
   fun inject(activity: MainActivity)
 
-  @Component.Builder
-  interface AppComponentBuilder {
-    @BindsInstance
-    fun context(context: Context): AppComponentBuilder
-
-    @BindsInstance
-    fun currentTime(currentTime: Long): AppComponentBuilder
-
-    fun build(): AppComponent
+  @Component.Factory
+  interface AppComponentFactory {
+    fun create(
+      @BindsInstance context: Context,
+      @BindsInstance  currentTime: Long
+    ): AppComponent
   }
 }
