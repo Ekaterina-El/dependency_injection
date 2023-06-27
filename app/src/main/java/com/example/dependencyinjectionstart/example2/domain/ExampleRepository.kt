@@ -1,6 +1,6 @@
 package com.example.dependencyinjectionstart.example2.domain
 
-interface ExampleRepository {
+interface ExampleRepository  {
 
     fun method()
 }
