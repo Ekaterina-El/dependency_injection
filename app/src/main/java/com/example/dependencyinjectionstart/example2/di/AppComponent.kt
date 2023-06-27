@@ -5,10 +5,11 @@ import com.example.dependencyinjectionstart.example2.presentation.ExampleViewMod
 import com.example.dependencyinjectionstart.example2.presentation.MainActivity
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Module
 import javax.inject.Singleton
 
 @ApplicationScope
-@Component(modules = [DomainModule::class, DataModule::class])
+@Component(modules = [DomainModule::class, DataModule::class, ViewModelModel::class])
 interface AppComponent {
   fun getViewModel(): ExampleViewModel
   fun inject(activity: MainActivity)

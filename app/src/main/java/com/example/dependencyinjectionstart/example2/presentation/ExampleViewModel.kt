@@ -1,16 +1,14 @@
 package com.example.dependencyinjectionstart.example2.presentation
 
-import com.example.dependencyinjectionstart.example2.di.ApplicationScope
+import androidx.lifecycle.ViewModel
 import com.example.dependencyinjectionstart.example2.domain.ExampleUseCase
 import javax.inject.Inject
-import javax.inject.Singleton
 
-@ApplicationScope
 class ExampleViewModel @Inject constructor(
-    private val useCase: ExampleUseCase
-) {
+  private val useCase: ExampleUseCase
+): ViewModel() {
 
-    fun method() {
-        useCase()
-    }
+  fun method() {
+    useCase()
+  }
 }
