@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-abstract class DomainModule {
+interface DomainModule {
   @Binds
-  abstract fun provideRepository(impl: ExampleRepositoryImpl): ExampleRepository
+  fun provideRepository(impl: ExampleRepositoryImpl): ExampleRepository
 }

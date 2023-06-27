@@ -8,10 +8,10 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-abstract class DataModule {
+interface DataModule {
   @Binds
-  abstract fun provideLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
+  fun provideLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
 
   @Binds
-  abstract fun provideRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+  fun provideRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 }
