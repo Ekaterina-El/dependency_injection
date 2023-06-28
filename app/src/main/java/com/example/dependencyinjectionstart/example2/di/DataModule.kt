@@ -1,9 +1,6 @@
 package com.example.dependencyinjectionstart.example2.di
 
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleLocalDataSource
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleLocalDataSourceImpl
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleRemoteDataSource
-import com.example.dependencyinjectionstart.example2.data.datasource.ExampleRemoteDataSourceImpl
+import com.example.dependencyinjectionstart.example2.data.datasource.*
 import dagger.Binds
 import dagger.Module
 
@@ -14,6 +11,12 @@ interface DataModule {
   fun provideLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
 
   @ApplicationScope
+  @RemoteDataSource
   @Binds
   fun provideRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+
+  @ApplicationScope
+  @TestRemoteDataSource
+  @Binds
+  fun provideTestRemoteDataSource(impl: TestExampleRemoteDataSourceImpl): ExampleRemoteDataSource
 }
